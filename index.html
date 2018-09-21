@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Technical Documentation for CSS</title>
+	<style>
+		@import url('https://fonts.googleapis.com/css?family=Noto+Serif+KR:400,700');
+
+		html, body {
+			min-width: 290px;
+			color: #4d4e53;
+			background-color: #fff;
+			font-family: "Noto Serif KR", sans-serif;
+			line-height: 1.5;
+		}
+
+		/* Navbar */
+
+		#navbar {
+			position: fixed;
+			min-width: 300px;
+			top: 0;
+			left: 0;
+			width: 300px;
+			height: 100%;
+			border-right: solid;
+			border-color: rgba(0, 22, 22, 0.4);
+		}
+
+		header {
+			font-weight: 700;
+			color: black;
+			margin: 10px;
+			font-size: 1.5em;
+			text-align: center;
+		}
+
+		#main-doc header {
+			text-align: left;
+			margin: 0px;
+		}
+
+		#navbar header {
+			background: #eee;
+			margin: 0;
+			padding: 15px 0;
+			border-bottom: 2px solid black;
+		}
+
+		#navbar ul {
+			height: 90%;
+			overflow-y: scroll;
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+
+		#navbar li {
+			list-style: none;
+			color: #4d4e53;
+			border: 1px solid;
+			border-bottom-width: 0;
+			padding: 8px;
+			padding-left: 40px;
+			position: relative;
+			left: -50px;
+			width: 100%;
+		}
+
+
+		#navbar a {
+			text-decoration: none;
+			color: #4d4e53;
+			cursor: pointer;
+		}
+
+		#navbar li:hover {
+			color: #fff;
+			background-color: #4d4e53;
+			border: 1px solid black;
+		}
+
+		#main-doc {
+			position: relative;
+			margin-left: 310px;
+			padding: 20px;
+			margin-bottom: 100px;
+		}
+
+		section article {
+			color: #4d4e53;
+			font-size: 1em;
+			margin: 15px;
+		}
+
+		section li {
+			margin: 15px 0px 0px 20px;
+		}
+
+		code {
+			display: block;
+			background: #f7f7f7;
+			text-align: left;
+			position: relative;
+			white-space: pre;
+			word-break: break-all;
+			overflow: scroll;
+			line-height: 2;
+			padding: 15px;
+			margin: 10px;
+			border-radius: 5px;
+		}
+
+		@media only screen and (max-width: 815px){
+			#navbar ul {
+				border: 1px solid;
+				height: 207px;
+			}
+
+			#navbar {
+				background-color: #fff;
+				position: absolute;
+				top: 0;
+				padding: 0;
+				margin: 0;
+				width: 100%;
+				max-height: 275px;
+				border: none;
+				z-index: 1;
+				border-bottom: 3px solid #000;
+			}
+
+			#main-doc {
+				margin-top: 300px;
+				margin-left: 0;
+				position: relative;
+			}
+		}
+
+		@media only screen and (max-width: 400px){
+			#main-doc {
+				margin-left: -10px;
+			}
+
+			code {
+				margin-left: -20px;
+				width: 100%;
+				padding: 15px;
+				padding-left: 10px;
+				padding-right: 45px;
+				min-width: 233px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+	<nav id="navbar">
+		<header>CSS Documentation</header>
+		<ul>
+			<a href="#Introduction" class="nav-link"><li>Introduction</li></a>
+			<a href="#CSS_Grid_Property" class="nav-link"><li>CSS Grid Property</li></a>
+			<a href="#Flexbox" class="nav-link"><li>Flexbox</li></a>
+			<a href="#Animation" class="nav-link"><li>Animation</li></a>
+			<a href="#Absolute_Position" class="nav-link"><li>Absolute Position</li></a>
+			<a href="#Fixed_Position" class="nav-link"><li>Fixed Position</li></a>
+			<a href="#CSS_Variables" class="nav-link"><li>CSS Variables</li></a>
+			<a href="#Z_Index" class="nav-link"><li>Z Index</li></a>
+			<a href="#Block_Elements" class="nav-link"><li>Block Elements</li></a>
+			<a href="#Inline_Elements" class="nav-link"><li>Inline Elements</li></a>
+			<a href="#Pseudo_Classes" class="nav-link"><li>Pseudo classes</li></a>
+			<a href="#Float_Property" class="nav-link"><li>Float Property</li></a>
+			<a href="#Keyframes" class="nav-link"><li>Keyframes</li></a>
+			<a href="#Path" class="nav-link"><li>Path</li></a>
+			<a href="#Media_Queries" class="nav-link"><li>Media Queries</li></a>
+			<a href="#Make_an_Image_Responsive" class="nav-link"><li>Make an Image Responsive</li></a>
+			<a href="#Reference" class="nav-link"><li>Reference</li></a>
+		</ul>
+	</nav>
+
+	<main id="main-doc">
+		<section class="main-section" id="Introduction">
+			<header>Introduction</header>
+			<article>
+				<p>Cascading Style Sheets (CSS) is a stylesheet language used to describe the presentation of a document written in HTML or XML (including XML dialects such as SVG, MathML or XHTML). CSS describes how elements should be rendered on screen, on paper, in speech, or on other media.</p>
+				<p>CSS is one of the core languages of the open web and is standardized across browsers according to the W3C specification. Developed in levels, CSS1 is now obsolete, CSS2.1 is a recommendation, and CSS3, now split into smaller modules, is progressing on the standardization track.</p>
+			</article>
+		</section>
+		<section class="main-section" id="CSS_Grid_Property">
+			<header>CSS Grid Property</header>
+			<article>
+				<p>The grid CSS property is a shorthand property that sets all of the explicit grid properties (grid-template-rows, grid-template-columns, and grid-template-areas), and all the implicit grid properties (grid-auto-rows, grid-auto-columns, and grid-auto-flow), in a single declaration.</p>
+				<p>CSS Demo: grid</p>
+				<code>grid: auto-flow / 1fr 1fr 1fr;</code>
+				<code>grid: auto-flow dense / 40px 40px 1fr;</code>
+				<code>grid: repeat(3, 80px) / auto-flow;</code>
+			</article>
+		</section>
+		<section class="main-section" id="Flexbox">
+			<header>Flexbox</header>
+			<article>
+				<p>Flexbox is a one-dimensional layout method for laying out items in rows or columns. Items flex to fill additional space and shrink to fit into smaller spaces. This article explains all the fundamentals.</p>
+				<p>The following simple layout requirements are either difficult or impossible to achieve with such tools, in any kind of convenient, flexible way:</p>
+				<ul>
+					<li>Vertically centering a block of content inside its parent.</li>
+					<li>Making all the children of a container take up an equal amount of the available width/height, regardless of how much width/height is available.</li>
+					<li>Making all columns in a multiple column layout adopt the same height even if they contain a different amount of content.</li>
+				</ul>
+			</article>
+		</section>
+		<section class="main-section" id="Animation">
+			<header>Animation</header>
+			<article>
+				<p>The animation CSS property is a shorthand property for the various animation properties: animation-name, animation-duration, animation-timing-function, animation-delay, animation-iteration-count, animation-direction, animation-fill-mode, and animation-play-state.</p>
+				<p>Example:</p>
+				<code>-webkit-animation: 4s linear 0s infinite alternate move_eye;
+	animation: 4s linear 0s infinite alternate move_eye;
+
+@-webkit-keyframes move_eye { from { margin-left: -20%; } to { margin-left: 100%; }  }
+@keyframes move_eye { from { margin-left: -20%; } to { margin-left: 100%; }  }
+				</code>
+			</article>
+		</section>
+		<section class="main-section" id="Absolute_Position">
+			<header>Absolute Position</header>
+			<article>
+				<p>The position CSS property specifies how an element is positioned in a document. The top, right, bottom, and left properties determine the final location of positioned elements.</p>
+				<li>An absolutely positioned element is an element whose computed position value is absolute or fixed. The top, right, bottom, and left properties specify offsets from the edges of the element's containing block. (The containing block is the ancestor relative to which the element is positioned.) If the element has margins, they are added to the offset.</li>
+				<p>Example:</p>
+				<code>.positioned {
+	position: absolute;
+	background: yellow;
+	top: 30px;
+	left: 30px;
+}</code>
+			</article>
+		</section>
+		<section class="main-section" id="Fixed_Position">
+			<header>Fixed Position</header>
+			<article>
+				<p>The element is removed from the normal document flow, and no space is created for the element in the page layout. It is positioned relative to the initial containing block established by the viewport, except when one of its ancestors has a transform, perspective, or filter property set to something other than none (see the CSS Transforms Spec), in which case that ancestor behaves as the containing block. (Note that there are browser inconsistencies with perspective and filter contributing to containing block formation.) Its final position is determined by the values of top, right, bottom, and left.</p>
+				<p>This value always creates a new stacking context. In printed documents, the element is placed in the same position on every page.</p>
+				<code>#one {
+	position: fixed;
+	top: 80px;
+	left: 10px;
+	background: blue;
+}</code>
+			</article>
+		</section>
+		<section class="main-section" id="CSS_Variables">
+			<header>CSS Variables</header>
+			<article>
+				<p>CSS variables are entities defined by CSS authors that contain specific values to be reused throughout a document. They are set using custom property notation (e.g. --main-color: black;) and are accessed using the var() function (e.g., color: var(--main-color);) .</p>
+			    <p>Complex websites have very large amounts of CSS, often with a lot of repeated values. For example, the same colour might be used in hundreds of different places, requiring global search and replace if that colour needs to change. CSS variables allow a value to be stored in one place, then referenced in multiple other places. An additional benefit is semantic identifiers. For example --main-text-color is easier to understand than #00ff00, especially if this same color is also used in another context.</p>
+			</article>
+		</section>
+		<section class="main-section" id="Z_Index">
+			<header>Z Index</header>
+			<article>
+				<p>The z-index CSS property specifies the z-order of a positioned element and its descendants or flex items (children of an element with display: flex). When elements overlap, z-order determines which one covers the other. An element with a larger z-index generally covers an element with a lower one.</p>
+				<p>For a positioned box (that is, one with any position other than static), the z-index property specifies:</p>
+				<ol>
+					<li>The stack level of the box in the current stacking context.</li>
+					<li>Whether the box establishes a local stacking context.</li>
+				</ol>
+			</article>
+		</section>
+		<section class="main-section" id="Block_Elements">
+			<header>Block Elements</header>
+			<article>
+				<p>HTML (Hypertext Markup Language) elements are usually either "block-level" elements or "inline" elements. A block-level element occupies the entire space of its parent element (container), thereby creating a "block." This article helps to explain what this means.</p>
+			    <p>Browsers typically display the block-level element with a newline both before and after the element. You can visualize them as a stack of boxes.</p>
+			</article>
+		</section>
+		<section class="main-section" id="Inline_Elements">
+			<header>Inline Elements</header>
+			<article>
+				<p>In HTML, inline elements are those which only occupy the space bounded by the tags defining the element, instead of breaking the flow of the content. In this article, we'll examine HTML inline elements and how they differ from block-level elements.</p>
+				<ul>
+					<li>Generally, inline elements may contain only data and other inline elements. You can't put block elements inside inline elements.</li>
+					<li>By default, inline elements do not force a new line to begin in the document flow. Block elements, on the other hand, typically cause a line break to occur (although, as usual, this can be changed using CSS).</li>
+				</ul>
+			</article>
+		</section>
+		<section class="main-section" id="Pseudo_Classes">
+			<header>Pseudo Classes</header>
+			<article>
+				<p>A CSS pseudo-class is a keyword added to a selector that specifies a special state of the selected element(s). For example, :hover can be used to change a button's color when the user hovers over it.</p>
+				<code>div:hover {
+	background-color: #F89B4D;
+}</code>
+				<p>Syntax:</p>
+				<code>selector:pseudo-class {
+	property: value;
+}</code>
+			</article>
+		</section>
+		<section class="main-section" id="Float_Property">
+			<header>Float Property</header>
+			<article>
+				<p>The float CSS property specifies that an element should be placed along the left or right side of its container, allowing text and inline elements to wrap around it. The element is removed from the normal flow of the web page, though still remaining a part of the flow (in contrast to absolute positioning).</p>
+			    <li>A floating element is one where the computed value of float is not none.</li>
+			</article>
+		</section>
+		<section class="main-section" id="Keyframes">
+			<header>Keyframes</header>
+			<article>
+				<p>The @keyframes CSS at-rule controls the intermediate steps in a CSS animation sequence by defining styles for keyframes (or waypoints) along the animation sequence. This gives more control over the intermediate steps of the animation sequence than transitions.</p>
+				<code>@keyframes slidein {
+	from {
+		margin-left: 100%;
+		width: 300%;
+	}
+	to {
+		margin-left: 0%;
+		width: 100%;
+		}
+}</code>
+			</article>
+		</section>
+		<section class="main-section" id="Path">
+			<header>Path</header>
+			<article>
+				<p>The &lt;path&gt; element is the most powerful element in the SVG library of basic shapes. You can use it to create lines, curves, arcs and more.</p>
+				<p>Paths create complex shapes by combining multiple straight lines or curved lines. Complex shapes composed only of straight lines can be created as polylines. While polylines and paths can create similar-looking shapes, polylines require a lot of small straight lines to simulate curves and don't scale well to larger sizes. A good understanding of paths is important when drawing SVGs. While creating complex paths using an XML editor or text editor is not recommended, understanding how they work will allow you to identify and repair display issues in SVGs.</p>
+				<code>&lt;svg width="200" height="200" xmlns="http://www.w3.org/2000/svg"&gt;
+	&lt;path d="M10 10"/&gt;
+	&lt;!-- Points --&gt;
+	&lt;circle cx="10" cy="10" r="2" fill="red"/&gt;
+&lt;/svg&gt;</code>
+			</article>
+		</section>
+		<section class="main-section" id="Media_Queries">
+			<header>Media Queries</header>
+			<article>
+				<p>Media queries are useful when you want to modify your site or app depending on a device's general type (such as print vs. screen) or specific characteristics and parameters (such as screen resolution or browser viewport width).</p>
+				<p>Media queries are used for the following:</p>
+				<ul>
+					<li>To conditionally apply styles with the CSS @media and @import at-rules.</li>
+					<li>To target specific media for the <link>, <source>, and other HTML elements.</li>
+					<li>To test and monitor media states using the Window.matchMedia() and MediaQueryList.addListener() JavaScript methods.</li>
+				</ul>
+			</article>
+		</section>
+		<section class="main-section" id="Make_an_Image_Responsive">
+			<header>Make an Image Responsive</header>
+			<article>
+				<p>Instead of applying an absolute width (px), you can use <code>max-width: 100%;</code>. It scales the image to fit the width of it's container. But it won't stretch more than it's original width.</p>
+			</article>
+		</section>
+		<section class="main-section" id="Reference">
+			<header>Reference</header>
+			<article>
+				<li>All the Documentation in this page is taken from <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference" target="_blank">MDN</a></li>
+			</article>
+		</section>
+	</main>
+
+
+
+
+
+	
+</body>
+</html>
